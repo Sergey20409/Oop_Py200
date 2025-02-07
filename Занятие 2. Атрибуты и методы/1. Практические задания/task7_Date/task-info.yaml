@@ -22,8 +22,8 @@ files:
                       raise TypeError('Неверный тип year')
                   self.year = year
         selected: false
-        status: Unchecked
-      - offset: 227
+        status: Failed
+      - offset: 624
         length: 54
         placeholder_text: "... # TODO Реализуйте возвращение в формате DD/MM/YYYY"
         initial_state:
@@ -31,9 +31,9 @@ files:
           offset: 227
         initialized_from_dependency: false
         encrypted_possible_answer: "return f\"{self.day:0>2}/{self.month:0>2}/{self.year:4}\""
-        selected: false
-        status: Unchecked
-      - offset: 315
+        selected: true
+        status: Failed
+      - offset: 774
         length: 78
         placeholder_text: "... # TODO Реализуйте возвращение в формате Date(day=..., month=...,\
       \ year=...)"
@@ -44,7 +44,7 @@ files:
         encrypted_possible_answer: "return f\"{self.__class__.__name__}(day={self.day!r},\
       \ month={self.month!r}, year={self.year!r})\""
         selected: false
-        status: Unchecked
+        status: Failed
     learner_created: false
   - name: __init__.py
     visible: false
@@ -55,5 +55,18 @@ files:
   - name: tests/input.txt
     visible: false
     learner_created: false
-status: Unchecked
+status: Failed
+feedback:
+  message: Incorrect
+  time: "Fri, 07 Feb 2025 18:11:33 UTC"
+  expected: |
+    01/01/2021
+    11/10/1999
+    Date(day=1, month=1, year=2021) Date(day=11, month=10, year=1999)
+    Верный вызов TypeError
+  actual: |2
+     1/1/2021
+     11/10/1999
+    Date(1, 1, 2021) Date(11, 10, 1999)
+    Верный вызов TypeError
 record: -1
