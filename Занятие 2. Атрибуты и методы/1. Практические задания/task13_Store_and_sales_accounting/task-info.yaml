@@ -15,8 +15,8 @@ files:
           total_products = 0
               total_revenue = 0.0
         selected: false
-        status: Unchecked
-      - offset: 803
+        status: Solved
+      - offset: 848
         length: 58
         placeholder_text: "# TODO Обновите значение классового атрибута total_revenue"
         initial_state:
@@ -25,8 +25,8 @@ files:
         initialized_from_dependency: false
         encrypted_possible_answer: cls.total_revenue += value
         selected: false
-        status: Unchecked
-      - offset: 934
+        status: Solved
+      - offset: 1013
         length: 59
         placeholder_text: "# TODO Обновите значение классового атрибута total_products"
         initial_state:
@@ -35,9 +35,9 @@ files:
         initialized_from_dependency: false
         encrypted_possible_answer: cls.total_products += value
         selected: false
-        status: Unchecked
-      - offset: 1317
-        length: 101
+        status: Solved
+      - offset: 1431
+        length: 134
         placeholder_text: "# TODO Проверьте, что если запрашиваемого числа товара нет\
       \ на складе, то вызывается ошибка ValueError"
         initial_state:
@@ -47,9 +47,9 @@ files:
         encrypted_possible_answer: |-
           if amount > self.quantity:
                       raise ValueError(f"Недостаточно товара {self.name} на складе!")
-        selected: false
-        status: Unchecked
-      - offset: 1427
+        selected: true
+        status: Solved
+      - offset: 1574
         length: 97
         placeholder_text: "# TODO Уменьшите количество товара на складе (self.quantity)\
       \ на соответствующее значение (amount)"
@@ -59,9 +59,9 @@ files:
         initialized_from_dependency: false
         encrypted_possible_answer: self.quantity -= amount
         selected: false
-        status: Unchecked
-      - offset: 1543
-        length: 84
+        status: Solved
+      - offset: 1690
+        length: 19
         placeholder_text: "# TODO посчитайте выручку как количество проданного товара\
       \ умноженное на цену товара"
         initial_state:
@@ -69,10 +69,10 @@ files:
           offset: 1543
         initialized_from_dependency: false
         encrypted_possible_answer: amount * self.price
-        selected: false
-        status: Unchecked
-      - offset: 1636
-        length: 84
+        selected: true
+        status: Solved
+      - offset: 1718
+        length: 0
         placeholder_text: "# TODO Добавить выручку (revenue) к классовой переменной от\
       вечающей за общую выручку"
         initial_state:
@@ -81,9 +81,9 @@ files:
         initialized_from_dependency: false
         encrypted_possible_answer: self.add_value_to_total_revenue(revenue)
         selected: false
-        status: Unchecked
-      - offset: 1729
-        length: 101
+        status: Solved
+      - offset: 1718
+        length: 87
         placeholder_text: "# TODO Уменьшите значение классовой переменной total_products,\
       \ так как общее чмсор товаров изменилось"
         initial_state:
@@ -92,9 +92,9 @@ files:
         initialized_from_dependency: false
         encrypted_possible_answer: self.add_value_total_products(-amount)
         selected: false
-        status: Unchecked
-      - offset: 2121
-        length: 98
+        status: Solved
+      - offset: 2096
+        length: 0
         placeholder_text: "# TODO Увеличьте количество товара на складе (self.quantity)\
       \ на соответствующее значение (amount)'"
         initial_state:
@@ -102,10 +102,10 @@ files:
           offset: 2121
         initialized_from_dependency: false
         encrypted_possible_answer: self.quantity += amount
-        selected: false
-        status: Unchecked
-      - offset: 2228
-        length: 71
+        selected: true
+        status: Solved
+      - offset: 2096
+        length: 69
         placeholder_text: "# TODO Увеличьте общее число товаров total_products (классо\
       вый атрибут)"
         initial_state:
@@ -114,19 +114,19 @@ files:
         initialized_from_dependency: false
         encrypted_possible_answer: self.add_value_total_products(amount)
         selected: false
-        status: Unchecked
-      - offset: 2835
-        length: 56
+        status: Solved
+      - offset: 2701
+        length: 57
         placeholder_text: "# TODO Верните общее количество всех товаров в магазине."
         initial_state:
           length: 56
           offset: 2835
         initialized_from_dependency: false
         encrypted_possible_answer: return sum(product.quantity for product in self.products)
-        selected: false
-        status: Unchecked
-      - offset: 3029
-        length: 55
+        selected: true
+        status: Solved
+      - offset: 2896
+        length: 73
         placeholder_text: "# TODO Верните общую стоимость всех товаров в магазине."
         initial_state:
           length: 55
@@ -135,9 +135,9 @@ files:
         encrypted_possible_answer: return sum(product.price * product.quantity for product
           in self.products)
         selected: false
-        status: Unchecked
-      - offset: 3174
-        length: 121
+        status: Solved
+      - offset: 3059
+        length: 196
         placeholder_text: "# TODO Реализуйте сравнивание цен. Верните название товара\
       \ с большей ценой, если одинаковые, то верните 'Цены одинаковы'."
         initial_state:
@@ -152,7 +152,7 @@ files:
                   else:
                       return "Цены одинаковы"
         selected: false
-        status: Unchecked
+        status: Solved
     learner_created: false
   - name: __init__.py
     visible: false
@@ -163,5 +163,8 @@ files:
   - name: tests/input.txt
     visible: false
     learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Sat, 08 Feb 2025 20:53:22 UTC"
 record: -1

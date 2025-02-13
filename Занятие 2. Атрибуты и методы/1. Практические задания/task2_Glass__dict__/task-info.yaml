@@ -3,7 +3,7 @@ files:
   - name: main.py
     visible: true
     placeholders:
-      - offset: 144
+      - offset: 689
         length: 71
         placeholder_text: "# TODO Распечатайте словарь атрибутов экземпляра класса в н\
       ачале метода"
@@ -12,9 +12,9 @@ files:
           offset: 144
         initialized_from_dependency: false
         encrypted_possible_answer: print(self.__dict__)
-        selected: true
-        status: Solved
-      - offset: 392
+        selected: false
+        status: Failed
+      - offset: 908
         length: 70
         placeholder_text: "# TODO Распечатайте словарь атрибутов экземпляра класса в к\
       онце метода"
@@ -24,7 +24,7 @@ files:
         initialized_from_dependency: false
         encrypted_possible_answer: print(self.__dict__)
         selected: false
-        status: Solved
+        status: Failed
     learner_created: false
   - name: __init__.py
     visible: false
@@ -32,8 +32,11 @@ files:
   - name: tests/output.txt
     visible: false
     learner_created: false
-status: Solved
+status: Failed
 feedback:
-  message: Congratulations!
-  time: "Fri, 07 Feb 2025 17:43:12 UTC"
+  message: Incorrect
+  time: "Sat, 08 Feb 2025 20:23:21 UTC"
+  actual: |
+    {}
+    {'capacity_volume': 200, 'occupied_volume': 100}
 record: -1
