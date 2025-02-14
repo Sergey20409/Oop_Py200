@@ -20,21 +20,21 @@ class Book:
         self.name = name
         self.pages = pages
 
-    def __str__(self)-> str:
+    def __str__(self):
         return f'Книга "{self.name}"'
 
-    def __repr__(self) -> str:
+    def __repr__(self):
         return f"Book(id_={self.id_}, name='{self.name}', pages={self.pages})"
 
 class Library:
 
-    def __init__(self, books):
+    def __init__(self, books = None):
         """
         Не забудьте про 'Конструктор должен принимать необязательный аргумент со значением по умолчанию. Если пользователь
         его не передал, то библиотека инициализируется с пустым списком книг.'
         :param books:
         """
-        self.books = books
+        self.books = books if books is not None else []
 
     def get_next_book_id(self):
         """
@@ -42,9 +42,13 @@ class Library:
         значение после этого `id`
         :return:
         """
-        if self.id_ == 0:
+        if not self.books:
             return 1
-        return self.id_ + 1
+        last_id = 0
+        for book in self.books:
+            if book.id_ > last_id:
+                last_id = book.id_
+        return last_id + 1
 
     def get_index_by_book_id(self, id_):
         """
@@ -54,10 +58,10 @@ class Library:
         :param id_: id книги
         :return: индекс, где лежит книга в списке книг
         """
-        if self.id_ != 0:
-            return self.id_
-        if not self.id_ == 0:
-            raise ValueError("Книги с запрашиваемым id не существует")
+        for position, book in enumerate(self.books):
+            if book.id_ == id_:
+                return position
+        raise ValueError("Книги с запрашиваемым id не существует")
 
 if __name__ == '__main__':
     empty_library = Library()  # инициализируем пустую библиотеку
